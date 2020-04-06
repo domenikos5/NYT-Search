@@ -27,9 +27,10 @@ $("#search").on("click", function(event) {
     event.preventDefault();
     $(".art-display").empty();
 
-    $("#search-term").val();
+    var searchTermNew = $("#search-term").val();
+    var numberOfArticles = $(".amtRecord").val();
 
-    var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q="+ searchTerm+"&api-key=aGLf4ScijAmS7S4h1HcAZ7yPaL1KQQ1H";
+    var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q="+ searchTermNew +"&api-key=aGLf4ScijAmS7S4h1HcAZ7yPaL1KQQ1H";
 
     $.ajax({
     url: queryURL,
